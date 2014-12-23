@@ -47,6 +47,10 @@ var dasherize = require('dasherize')
 
 Convert the key strings in `obj` to dash-case recursively.
 
+## dasherize(str)
+
+Convert the string to dash-case.
+
 # install
 
 With [npm](https://npmjs.org) do:
