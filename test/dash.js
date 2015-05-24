@@ -28,6 +28,22 @@ test('string', function (t) {
   t.equal(dasherize('oneTwo'), 'one-two');
 });
 
+test('string all caps', function(t) {
+  t.plan(1);
+  t.equal(dasherize('CONSTX'), 'constx');
+});
+
+test('string pascal case', function(t) {
+  t.plan(1);
+  t.equal(dasherize('TestOne'), 'test-one');
+});
+
+test('strings with acronym', function(t) {
+  t.plan(2);
+  t.equal(dasherize('inCIA'), 'in-cia');
+  t.equal(dasherize('isMLBAllStar'), 'is-mlb-all-star');
+})
+
 test('date', function (t) {
   t.plan(1);
   var d = new Date();

@@ -24,8 +24,8 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 function dashCase(str) {
-  return str.replace(/([A-Z])/g, function ($1) {
-    return '-' + $1.toLowerCase();
+  return str.replace(/[A-Z](?:(?=[^A-Z])|[A-Z]*(?=[A-Z][^A-Z]|$))/g, function (s, i) {
+    return (i > 0 ? '-' : '') + s.toLowerCase();
   });
 }
 
