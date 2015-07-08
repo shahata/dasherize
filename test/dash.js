@@ -10,10 +10,29 @@ var obj = {
     { fooBar: 'baz' }
   ]
 };
+var obj2 = {
+  feeFieFoe: 'fum',
+  beep_boop: [
+    { abc_xyz: 'mno' },
+    { foo_bar: 'baz' }
+  ]
+};
 
 test('dasherize a nested object', function (t) {
   t.plan(1);
   var res = dasherize(obj);
+  t.deepEqual(res, {
+    'fee-fie-foe': 'fum',
+    'beep-boop': [
+      { 'abc-xyz': 'mno' },
+      { 'foo-bar': 'baz' }
+    ]
+  });
+});
+
+test('dasherize a snake case object', function (t) {
+  t.plan(1);
+  var res = dasherize(obj2);
   t.deepEqual(res, {
     'fee-fie-foe': 'fum',
     'beep-boop': [
